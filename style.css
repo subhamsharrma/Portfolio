@@ -1,0 +1,73 @@
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: linear-gradient(to right, #f7fafe, #ffffff);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a2b49;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.nav-links .btn {
+  background-color: #1a73e8;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.nav-links .btn:hover {
+  background-color: #1669d3;
+}
+.starcomponent { 
+    margin-top: 50px;
+    width: 100%;
+    border: #1669d3 2px solid;
+
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* background-color: red; */
+}
+.paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 20px 0;
+}
+.tag {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #e0f7fa;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 40px;
+    margin-right: 8px;
+}
