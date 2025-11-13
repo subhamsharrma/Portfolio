@@ -92,7 +92,29 @@ section {
 .about a:hover {
   border-bottom-color: #4a9eff;
 }
- 
+.copyrightsection,
+.delhitime {
+  margin: 0;
+  padding: 0;
+}
+a.inline-flex {
+  color: #4a9eff; /* your custom blue */
+  text-decoration: none;
+}
+
+a.inline-flex:hover {
+  color: #74b6ff; /* slightly lighter blue on hover */
+}
+
+a.inline-flex:visited {
+  color: #4a9eff; /* same even after clicking */
+}
+
+
+.copyrightsection + .delhitime {
+  margin-top: 2px; /* tiny controlled gap */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   h1 {
