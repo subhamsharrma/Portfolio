@@ -1,228 +1,167 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.heading {
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: #4a9eff;
-}
+/* Global body */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #0a0a0a;
-    color: #e0e0e0;
-    line-height: 1.6;
-    transition: all 0.3s ease;
-    min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+  min-height: 100vh;
 }
 
 body.light-mode {
-    background-color: #f5f5f5;
-    color: #1a1a1a;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
 }
 
+/* Container */
+/* Container */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ✅ Add this line */
+  min-height: 100vh;       /* ✅ Add this line to center vertically */
 }
 
+
+/* Dark/Light Toggle Button */
 .toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #1a1a1a;
-    border: 2px solid #333;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
 }
 
 .light-mode .toggle-btn {
-    background-color: #fff;
-    border-color: #ddd;
+  background-color: #fff;
+  border-color: #ddd;
 }
 
 .toggle-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
 .light-mode .toggle-btn:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Header */
 header {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .highlight {
-    color: #4a9eff;
+  color: #4a9eff;
 }
 
 .light-mode .highlight {
-    color: #0066cc;
+  color: #0066cc;
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    color: #888;
+  font-size: 1.2rem;
+  color: #888;
 }
 
 .light-mode .subtitle {
-    color: #666;
+  color: #666;
 }
 
-section {
-    margin-bottom: 50px;
-    text-align: left;
+/* ABOUT SECTION */
+/* section {
+  margin-bottom: 50px;
+  text-align: left;
+} */
+ section {
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
+.heading {
+  text-align: left;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #4a9eff;
 }
 
 .about ul {
-    list-style: none;
+  list-style: none;
 }
 
 .about li {
-    margin-bottom: 15px;
-    padding-left: 25px;
-    position: relative;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
 }
 
-.about li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #4a9eff;
-    font-size: 1.5rem;
+.about li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4a9eff;
+  font-size: 1.5rem;
 }
 
-.light-mode .about li:before {
-    color: #0066cc;
+.light-mode .about li::before {
+  color: #0066cc;
 }
 
 .about a {
-    color: #4a9eff;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease;
+  color: #4a9eff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
 .light-mode .about a {
-    color: #0066cc;
+  color: #0066cc;
 }
 
 .about a:hover {
-    border-bottom-color: #4a9eff;
+  border-bottom-color: #4a9eff;
 }
 
 .light-mode .about a:hover {
-    border-bottom-color: #0066cc;
+  border-bottom-color: #0066cc;
 }
 
-.experience-item {
-    background-color: #1a1a1a;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    transition: all 0.3s ease;
-}
-
-.light-mode .experience-item {
-    background-color: #fff;
-    border-color: #ddd;
-}
-
-.experience-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(74, 158, 255, 0.2);
-}
-
-.experience-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #4a9eff;
-}
-
-.light-mode .experience-item h3 {
-    color: #0066cc;
-}
-
-.date {
-    color: #888;
-    font-size: 0.95rem;
-}
-
-.light-mode .date {
-    color: #666;
-}
-
-footer {
-    margin-top: 80px;
-    text-align: center;
-}
-
-footer p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-}
-
-.contact-btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #4a9eff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.light-mode .contact-btn {
-    background-color: #0066cc;
-}
-
-.contact-btn:hover {
-    background-color: #3a8eef;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(74, 158, 255, 0.4);
-}
-
-.light-mode .contact-btn:hover {
-    background-color: #0052a3;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .container {
-        padding: 40px 15px;
-    }
+  .container {
+    padding: 40px 20px;
+  }
 }
