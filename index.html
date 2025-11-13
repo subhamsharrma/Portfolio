@@ -68,16 +68,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-gray-950 text-gray-200 font-[Roboto]">
-    <!-- Theme Toggle -->
-    <button
-      id="toggleBtn"
-      class="fixed top-4 right-4 p-2 bg-gray-800 text-yellow-400 text-lg rounded-full shadow-md hover:scale-110 transition-transform"
-      aria-label="Toggle theme"
-    >
-      ☀️
-    </button>
-
     <!-- Main Container -->
     <main class="container mx-auto p-6 max-w-4xl">
       <!-- Header -->
@@ -196,19 +186,28 @@
           &copy; 2025 Subham Sharma. All rights reserved.
         </p>
       </section>
+
+      <section class="delhitime">
+        <p class="text-center text-gray-500 text-sm">
+          <strong>Delhi Time: </strong> <span id="delhiTime"></span>
+        </p>
+        <script>
+          function updateDelhiTime() {
+            const options = {
+              timeZone: 'Asia/Kolkata',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit',
+            };
+            const formatter = new Intl.DateTimeFormat([], options);
+            document.getElementById('delhiTime').textContent = formatter.format(new Date());
+          }
+          setInterval(updateDelhiTime, 1000);
+          updateDelhiTime();
+        </script>
+      </section>
     </main>
 
-    <!-- Theme Toggle Script -->
-    <script>
-      const toggleBtn = document.getElementById("toggleBtn");
-      const body = document.body;
-      let isDark = true;
-
-      toggleBtn.addEventListener("click", () => {
-        isDark = !isDark;
-        body.classList.toggle("light-mode");
-        toggleBtn.textContent = isDark ? "☀️" : "🌙";
-      });
-    </script>
+    
   </body>
 </html>
