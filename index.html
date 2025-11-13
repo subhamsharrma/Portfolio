@@ -52,7 +52,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subham Sharma - Portfolio</title>
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,33 +59,34 @@
       href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-
+  <body>
     <!-- Main Container -->
     <main class="container mx-auto p-6 max-w-4xl">
       <!-- Header -->
+
       <header class="text-center mb-10">
         <h1
-          class="text-2xl md:text-5xl font-bold mb-2"
-          style="font-family: 'Edu NSW ACT Cursive', cursive;"
+            class="text-xl md:text-1xl font-bold mb-2"
+            style="font-family: 'Edu NSW ACT Cursive', cursive"
         >
-          Subham Sharma
+            Subham Sharma
         </h1>
         <p class="subtitle text-lg text-gray-400">Software Engineer</p>
       </header>
+
+   
 
       <!-- About Me Section -->
       <section class="about mb-10">
         <h2 class="heading text-2xl font-semibold mb-3">About Me</h2>
         <ul class="list-disc list-inside space-y-2 text-gray-300">
           <li>
-            Hi, I’m Subham Sharma, a Full-Stack Developer driven by the passion
+            Hi, I'm Subham Sharma, a Full-Stack Developer driven by the passion
             to build impactful and scalable web applications.
           </li>
           <li>
@@ -94,29 +94,115 @@
             efficient, modern, and maintainable solutions across the stack.
           </li>
           <li>
-            Got an idea, project, or internship opportunity? Let’s connect! I’m
+            Got an idea, project, or internship opportunity? Let's connect! I'm
             always eager to collaborate and bring creative ideas to life.
           </li>
         </ul>
       </section>
 
+
       <!-- Projects Section -->
-      <section class="about mb-10">
+      <section class="projects mb-16 text-center">
         <h2 class="heading text-2xl font-semibold mb-3">Projects</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300">
-          <li>
-            <strong>Portfolio Website:</strong> Built using Next.js, Tailwind
-            CSS, and Framer Motion for smooth animations.
-          </li>
-          <li>
-            <strong>Blog Platform:</strong> Developed with Express.js, MongoDB,
-            and JWT authentication.
-          </li>
-          <li>
-            <strong>Weather App:</strong> Created using TypeScript and
-            OpenWeather API for real-time data fetching.
-          </li>
-        </ul>
+        <!-- Projects Grid -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+        >
+          <!-- Project Card 1 -->
+          <div
+            class="max-w-sm bg-gray-900/30 border border-gray-800/50 rounded-lg shadow-sm p-5 hover:border-gray-700/70 transition-all duration-300"
+          >
+            <h3 class="text-lg font-medium text-white mb-2">
+              Portfolio Website
+            </h3>
+            <p class="text-gray-400 text-sm mb-4">
+              A sleek personal portfolio built with <strong>Next.js</strong> and
+              <strong>Tailwind CSS</strong> to showcase my work and skills.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-gray-300 hover:text-white text-sm transition"
+            >
+              <a href="https://github.com/subhamsharrma">View Project</a>
+               <!-- View Project -->
+              <svg
+                class="w-3.5 h-3.5 ms-2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="max-w-sm bg-gray-900/30 border border-gray-800/50 rounded-lg shadow-sm p-5 hover:border-gray-700/70 transition-all duration-300"
+          >
+            <h3 class="text-lg font-medium text-white mb-2">Blog Platform</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              A full-stack <strong>Express.js</strong> and
+              <strong>MongoDB</strong> blog app with authentication and post
+              management.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-gray-300 hover:text-white text-sm transition"
+            >
+              View Project
+              <svg
+                class="w-3.5 h-3.5 ms-2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="max-w-sm bg-gray-900/30 border border-gray-800/50 rounded-lg shadow-sm p-5 hover:border-gray-700/70 transition-all duration-300"
+          >
+            <h3 class="text-lg font-medium text-white mb-2">Weather App</h3>
+            <p class="text-gray-400 text-sm mb-4">
+              A responsive <strong>TypeScript</strong> app using the OpenWeather
+              API to display live weather forecasts.
+            </p>
+            <a
+              href="#"
+              class="inline-flex items-center text-gray-300 hover:text-white text-sm transition"
+            >
+              View Project
+              <svg
+                class="w-3.5 h-3.5 ms-2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+          </div>
+          
+        </div>
       </section>
 
       <!-- Skills Section -->
@@ -146,42 +232,40 @@
           <strong>LinkedIn</strong>, or <strong>GitHub</strong> for any queries,
           collaboration opportunities, or <strong>further details.</strong>
         </p>
-
         <div class="flex flex-wrap justify-center gap-4">
           <!-- X / Twitter -->
-            <a
+          <a
             href="https://github.com/subhamsharrma"
             target="_blank"
             rel="noopener noreferrer"
             class="px-6 py-2 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
-            >
+          >
             Github
-            </a>
-
-            <!-- GitHub -->
-            <a
+          </a>
+          <!-- GitHub -->
+          <a
             href="https://x.com/subham_sharrma"
             target="_blank"
             rel="noopener noreferrer"
             class="px-6 py-2 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
-            >
+          >
             X
-            </a>
-
-            <!-- LinkedIn -->
-            <a
+          </a>
+          <!-- LinkedIn -->
+          <a
             href="https://www.linkedin.com/in/subhamsharrma/"
             target="_blank"
             rel="noopener noreferrer"
             class="px-6 py-2 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
-            >
+          >
             LinkedIn
-            </a>
-            
+          </a>
         </div>
       </section>
 
-      <br      <section class="copyrightsection">
+      <br />
+
+      <section class="copyrightsection">
         <p class="text-center text-gray-500 text-sm">
           &copy; 2025 Subham Sharma. All rights reserved.
         </p>
@@ -194,20 +278,19 @@
         <script>
           function updateDelhiTime() {
             const options = {
-              timeZone: 'Asia/Kolkata',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
+              timeZone: "Asia/Kolkata",
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
             };
             const formatter = new Intl.DateTimeFormat([], options);
-            document.getElementById('delhiTime').textContent = formatter.format(new Date());
+            document.getElementById("delhiTime").textContent =
+              formatter.format(new Date());
           }
           setInterval(updateDelhiTime, 1000);
           updateDelhiTime();
         </script>
       </section>
     </main>
-
-    
   </body>
 </html>

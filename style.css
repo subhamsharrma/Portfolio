@@ -92,7 +92,7 @@ section {
 .about a:hover {
   border-bottom-color: #4a9eff;
 }
-
+ 
 /* Responsive */
 @media (max-width: 768px) {
   h1 {
