@@ -51,69 +51,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Subham Sharma - Full-Stack Developer specializing in Next.js, Express.js, and TypeScript" />
+    <meta name="author" content="Subham Sharma" />
     <title>Subham Sharma - Portfolio</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    
+    <style>
+      .font-inter {
+        font-family: "Inter", sans-serif;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      
+      .skill-badge {
+        transition: all 0.3s ease;
+      }
+      
+      .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      }
+
+      .theme-toggle {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(180deg);
+      }
+
+      /* Light theme styles */
+      body.light-theme {
+        background-color: #f5f5f5;
+        color: #1a1a1a;
+      }
+
+      body.light-theme h1,
+      body.light-theme h2,
+      body.light-theme h3 {
+        color: #1a1a1a;
+      }
+
+      body.light-theme .text-gray-200 {
+        color: #1a1a1a;
+      }
+
+      body.light-theme .text-gray-300 {
+        color: #374151;
+      }
+
+      body.light-theme .text-gray-400 {
+        color: #6b7280;
+      }
+
+      body.light-theme .text-gray-500 {
+        color: #9ca3af;
+      }
+
+      body.light-theme .border-gray-700 {
+        border-color: #d1d5db;
+      }
+
+      body.light-theme .bg-gray-800 {
+        background-color: #e5e7eb;
+      }
+
+      body.light-theme .bg-gray-900 {
+        background-color: #f3f4f6;
+      }
+
+      body.light-theme .skill-badge {
+        background-color: #ffffff;
+        border-color: #d1d5db;
+        color: #1f2937;
+      }
+
+      body.light-theme .skill-badge:hover {
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+      }
+
+      body.light-theme .project-card {
+        background: linear-gradient(to bottom, #ffffff, #f9fafb);
+        border-color: #e5e7eb;
+      }
+
+      body.light-theme .project-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+      }
+
+      body.light-theme .bg-indigo-600 {
+        background-color: #4f46e5;
+      }
+
+      body.light-theme .bg-indigo-600:hover {
+        background-color: #4338ca;
+      }
+    </style>
   </head>
 
-  <body>
-    <!-- Main Container -->
-    <main class="container mx-auto p-6 max-w-4xl">
-      <!-- Header -->
+  <body class="font-inter bg-[#0a0a0a] text-gray-200">
+    <!-- Theme Toggle Button -->
+    <div class="fixed top-6 right-6 z-50">
+      <div id="themeToggle" class="theme-toggle w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+      </div>
+    </div>
 
-      <header class="text-center mb-10">
-        <div></div>
-        <h1
-          class="text-xl md:text-1xl font-bold mb-2"
-          style="font-family: 'Edu NSW ACT Cursive', cursive"
-        >
+    <!-- Main Container -->
+    <main class="container mx-auto p-6 max-w-3xl">
+      <!-- Header -->
+      <header class="text-center mb-10 animate-fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
           Subham Sharma
         </h1>
-        <p class="subtitle text-lg text-gray-400">Software Engineer</p>
+        <p class="text-gray-400 text-lg md:text-xl font-medium">
+          Full-Stack Developer
+        </p>
       </header>
-      <hr class="border-t border-gray-600/70 w-11/12 mx-auto mb-10" />
+      
+      <hr class="border-t border-gray-700/70 w-11/12 mx-auto mb-12" />
 
       <!-- About Me Section -->
-      <section class="about mb-10">
-        <h2 class="heading text-2xl font-semibold mb-3">About Me</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300">
-          <li>
+      <section class="about mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-white">About Me</h2>
+        <div class="space-y-3 text-gray-300 leading-relaxed">
+          <p>
             Hi, I'm Subham Sharma, a Full-Stack Developer driven by the passion
             to build impactful and scalable web applications.
-          </li>
-          <li>
+          </p>
+          <p>
             I work primarily with Next.js, Express.js, and TypeScript, crafting
             efficient, modern, and maintainable solutions across the stack.
-          </li>
-          <li>
+          </p>
+          <p>
             Got an idea, project, or internship opportunity? Let's connect! I'm
             always eager to collaborate and bring creative ideas to life.
-          </li>
-        </ul>
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.2s">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-5 text-white">Skills & Tools</h2>
+        
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Frontend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">React</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Next.js</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Tailwind CSS</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">JavaScript</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">TypeScript</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Backend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Node.js</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Express.js</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">REST APIs</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Database</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">MongoDB</span>
+              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Projects Section -->
-      <section class="projects mb-16 text-center">
-        <h2 class="heading text-2xl font-semibold mb-3">Project</h2>
-        <br />
+      <section class="projects mb-16 animate-fade-in-up" style="animation-delay: 0.3s">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-white">Projects</h2>
 
         <!-- Projects Grid -->
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Project Card 1 -->
-          <div
-            class="max-w-sm h-full bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:border-gray-700/80 transition-all duration-300"
-          >
+          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
             <div>
               <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
                 Portfolio Website
@@ -127,16 +276,15 @@
             <a
               href="https://www.lallu.com/lander"
               target="_blank"
-              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 transition mt-5"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
             >
               View Project →
             </a>
           </div>
 
           <!-- Project Card 2 -->
-          <div
-            class="max-w-sm h-full bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:border-gray-700/80 transition-all duration-300"
-          >
+          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
             <div>
               <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
                 Blog Platform
@@ -149,16 +297,16 @@
             </div>
             <a
               href="https://github.com/subhamsharrma"
-              class="inline-flex items-center text-sm text-indigo-500 hover:text-indigo-300 transition mt-5"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
             >
               View Project →
             </a>
           </div>
 
           <!-- Project Card 3 -->
-          <div
-            class="max-w-sm h-full bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:border-gray-700/80 transition-all duration-300"
-          >
+          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
             <div>
               <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
                 Weather App
@@ -169,8 +317,10 @@
               </p>
             </div>
             <a
-              href="www.github.com/subhamsharrma"
-              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 transition mt-5"
+              href="https://github.com/subhamsharrma"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
             >
               View Project →
             </a>
@@ -178,91 +328,100 @@
         </div>
       </section>
 
-      <!-- Skills Section -->
-      <section class="about mb-10">
-        <h2 class="heading text-2xl font-semibold mb-3">Skills & Tools</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300">
-          <li>
-            <strong>Frontend:</strong> React, Next.js, Tailwind CSS, JavaScript,
-            TypeScript
-          </li>
-          <li>
-            <strong>Backend:</strong> Node.js, Express.js, MongoDB, REST APIs
-          </li>
-          <li><strong>Database:</strong> MongoDB, PostgreSQL</li>
-        </ul>
-      </section>
-
       <!-- Contact Section -->
-      <section class="about text-center mb-10">
-        <h2 class="heading text-2xl font-semibold mb-4">Reach Out To Me</h2>
+      <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.4s">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-5 text-white text-center">
+          Reach Out To Me
+        </h2>
 
-        <p class="mb-6 text-gray-300 text-left max-w-2xl mx-auto">
+        <p class="mb-6 text-gray-300 text-center max-w-2xl mx-auto">
           Feel free to reach out via <strong>Email</strong>,
           <strong>LinkedIn</strong>, or <strong>GitHub</strong> for any queries,
-          collaboration opportunities, or <strong>further details.</strong>
+          collaboration opportunities, or internships.
         </p>
 
-        <div class="flex flex-wrap justify-start gap-3 max-w-2xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="mailto:subhamsharrma@gmail.com"
+            class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Email Me
+          </a>
+          
           <a
             href="https://github.com/subhamsharrma"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-4 py-1.5 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
+            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            Github
-          </a>
-
-          <a
-            href="https://x.com/subham_sharrma"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-4 py-1.5 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
-          >
-            X
+            GitHub
           </a>
 
           <a
             href="https://www.linkedin.com/in/subhamsharrma/"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-4 py-1.5 bg-gray-800 text-white font-medium rounded-lg shadow-md bg-gray-900 transition"
+            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
           >
             LinkedIn
+          </a>
+
+          <a
+            href="https://x.com/subham_sharrma"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+          >
+            X (Twitter)
           </a>
         </div>
       </section>
 
-      <br />
-      <hr class="border-t border-gray-600/70 w-11/12 mx-auto mb-10" />
+      <hr class="border-t border-gray-700/70 w-11/12 mx-auto mb-8" />
 
-      <section class="copyrightsection">
+      <!-- Footer -->
+      <footer class="space-y-3">
         <p class="text-center text-gray-500 text-sm">
           &copy; 2025 Subham Sharma. All rights reserved.
         </p>
-      </section>
-
-      <section class="delhitime">
+        
         <p class="text-center text-gray-500 text-sm">
-          <strong> Delhi : </strong> <span id="delhiTime"></span>
+          <strong>Delhi Time:</strong> <span id="delhiTime" class="font-mono"></span>
         </p>
-        <script>
-          function updateDelhiTime() {
-            const options = {
-              timeZone: "Asia/Kolkata",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-            };
-            const formatter = new Intl.DateTimeFormat([], options);
-            document.getElementById("delhiTime").textContent = formatter.format(
-              new Date()
-            );
-          }
-          setInterval(updateDelhiTime, 1000);
-          updateDelhiTime();
-        </script>
-      </section>
+      </footer>
     </main>
+
+    <script>
+      // Delhi Time Update
+      function updateDelhiTime() {
+        const options = {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+        const formatter = new Intl.DateTimeFormat([], options);
+        document.getElementById("delhiTime").textContent = formatter.format(new Date());
+      }
+      setInterval(updateDelhiTime, 1000);
+      updateDelhiTime();
+
+      // Theme Toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const toggleIcon = themeToggle.querySelector('svg');
+
+      themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-theme');
+        
+        if (body.classList.contains('light-theme')) {
+          // Change to sun icon for light theme
+          toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
+        } else {
+          // Change to moon icon for dark theme
+          toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
+        }
+      });
+    </script>
   </body>
 </html>
