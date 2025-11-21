@@ -51,10 +51,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Subham Sharma - Full-Stack Developer specializing in Next.js, Express.js, and TypeScript" />
+    <meta
+      name="description"
+      content="Subham Sharma - Full-Stack Developer specializing in Next.js, Express.js, and TypeScript"
+    />
     <meta name="author" content="Subham Sharma" />
     <title>Subham Sharma - Portfolio</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,179 +66,469 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+    <style>
+      /* ==================== RESET ==================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ==================== GLOBAL ==================== */
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        line-height: 1.6;
+        transition: all 0.3s ease;
+      }
+
+      /* ==================== CONTAINER ==================== */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px 10px;
+      }
+
+      /* ==================== HEADER ==================== */
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 25%,
+          #f093fb 50%,
+          #4facfe 75%,
+          #00f2fe 100%
+        );
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-shift 6s ease infinite;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+      }
+
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: #9ca3af;
+        font-weight: 500;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid rgba(75, 85, 99, 0.7);
+        width: 90%;
+        margin: 40px auto;
+      }
+
+      /* ==================== SECTIONS ==================== */
+      section {
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+      }
+
+      /* ==================== ABOUT ==================== */
+      .about p {
+        color: #d1d5db;
+        margin-bottom: 12px;
+        line-height: 1.7;
+      }
+
+      /* ==================== SKILLS ==================== */
+      .skills-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .skill-category h3 {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .skill-badge {
+        padding: 8px 16px;
+        background-color: rgba(31, 41, 55, 0.6);
+        border: 1px solid #374151;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #e5e7eb;
+        transition: all 0.2s ease;
+      }
+
+      .skill-badge:hover {
+        background-color: rgba(55, 65, 81, 0.8);
+        border-color: #4b5563;
+      }
+
+      /* ==================== PROJECTS ==================== */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        margin-top: 30px;
+      }
+
+      .project-card {
+        background-color: #0e0e0e;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card h3 {
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 12px;
+        font-weight: 600;
+        line-height: 2rem;
+        letter-spacing: -0.03em;
+        
+      }
+
+      .project-card p {
+        color: whitesmoke;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        letter-spacing: -0.03em;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 1px;
+        color: #ffffff;
+        background-color: #6366f1;
+        text-decoration: none;
+        font-size: 0.875rem;
+        letter-spacing: -0.03em;
+        font-weight: 500;
+        padding: 6px 13px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        transition: all 0.2s ease;
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      }
+
+      .project-link:hover {
+        background-color: #2563eb;
+      }
+
+      .project-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+      }
+
+      .project-link svg {
+        width: 16px;
+        height: 16px;
+        margin-left: 6px;
+        margin-right: -2px;
+      }
+
+      /* ==================== CONTACT ==================== */
+      .contact-section {
+        text-align: center;
+      }
+
+      .contact-section h2 {
+        margin-bottom: 20px;
+      }
+
+      .contact-description {
+        color: #d1d5db;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .contact-btn {
+        padding: 12px 24px;
+        font-weight: 500;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+      }
+
+      .contact-btn.primary {
+        background-color: #6366f1;
+        color: #ffffff;
+      }
+
+      .contact-btn.primary:hover {
+        background-color: #4f46e5;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      }
+
+      .contact-btn.secondary {
+        background-color: #1f2937;
+        color: #ffffff;
+        border: 1px solid #374151;
+      }
+
+      .contact-btn.secondary:hover {
+        background-color: #374151;
+        transform: translateY(-2px);
+      }
+
+      /* ==================== FOOTER ==================== */
+      footer {
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      footer p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin: 8px 0;
+      }
+
+      #delhiTime {
+        font-family: "Courier New", monospace;
+      }
+
+      /* ==================== RESPONSIVE ==================== */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .container {
+          padding: 40px 20px;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
   </head>
 
-  <body class="font-inter bg-[#0a0a0a] text-gray-200">
-
-    <!-- Main Container -->
-    <main class="container mx-auto p-6 max-w-3xl">
+  <body>
+    <main class="container">
       <!-- Header -->
-      <header class="text-center mb-10 animate-fade-in-up">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-3 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-          Subham Sharma
-        </h1>
-        <p class="text-gray-400 text-lg md:text-xl font-medium">
-          Full-Stack Developer
-        </p>
+      <header>
+        <h1>Subham Sharma</h1>
+        <p class="subtitle">Full-Stack Developer</p>
       </header>
-      
-      <hr class="border-t border-gray-700/70 w-11/12 mx-auto mb-12" />
 
       <!-- About Me Section -->
-      <section class="about mb-12 animate-fade-in-up" style="animation-delay: 0.1s">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-white">About Me</h2>
-        <div class="space-y-3 text-gray-300 leading-relaxed">
-          <p>
-            Hi, I'm Subham Sharma, a Full-Stack Developer driven by the passion
-            to build impactful and scalable web applications.
-          </p>
-          <p>
-            I work primarily with Next.js, Express.js, and TypeScript, crafting
-            efficient, modern, and maintainable solutions across the stack.
-          </p>
-          <p>
-            Got an idea, project, or internship opportunity? Let's connect! I'm
-            always eager to collaborate and bring creative ideas to life.
-          </p>
-        </div>
+      <section class="about">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Subham Sharma, a Full-Stack Developer driven by the passion to
+          build impactful and scalable web applications.
+        </p>
+        <p>
+          I work primarily with Next.js, Express.js, and TypeScript, crafting
+          efficient, modern, and maintainable solutions across the stack.
+        </p>
+        <p>
+          Got an idea, project, or internship opportunity? Let's connect! I'm
+          always eager to collaborate and bring creative ideas to life.
+        </p>
       </section>
 
       <!-- Skills Section -->
-      <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.2s">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-5 text-white">Skills & Tools</h2>
-        
-        <div class="space-y-4">
-          <div>
-            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Frontend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">React</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Next.js</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Tailwind CSS</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">JavaScript</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">TypeScript</span>
+      <section>
+        <h2>Skills & Tools</h2>
+
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Next.js</span>
+              <span class="skill-badge">Tailwind CSS</span>
+              <span class="skill-badge">JavaScript</span>
+              <span class="skill-badge">TypeScript</span>
             </div>
           </div>
-          
-          <div>
-            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Backend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Node.js</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">Express.js</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">REST APIs</span>
+
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">Express.js</span>
+              <span class="skill-badge">REST APIs</span>
             </div>
           </div>
-          
-          <div>
-            <h3 class="text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wide">Database</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">MongoDB</span>
-              <span class="skill-badge px-4 py-2 bg-gray-800/60 border border-gray-700 rounded-lg text-sm font-medium text-gray-200">PostgreSQL</span>
+
+          <div class="skill-category">
+            <h3>Database</h3>
+            <div class="skill-tags">
+              <span class="skill-badge">MongoDB</span>
+              <span class="skill-badge">PostgreSQL</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Projects Section -->
-      <section class="projects mb-16 animate-fade-in-up" style="animation-delay: 0.3s">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-white">Projects</h2>
+      <section>
+        <h2>Projects</h2>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Project Card 1 -->
-          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
-            <div>
-              <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
-                Portfolio Website
-              </h3>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                A sleek personal portfolio built with
-                <strong>Next.js</strong> and <strong>Tailwind CSS</strong> to
-                showcase my work and skills.
-              </p>
-            </div>
-            <a
-              href="https://www.lallu.com/lander"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
-            >
-              View Project →
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <h3>E-Commerce Platform</h3>
+            <p>
+              A full-stack online shopping platform with payment integration,
+              user authentication, and inventory management.
+            </p>
+            <a href="#" class="project-link">
+              Read more
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
             </a>
           </div>
 
-          <!-- Project Card 2 -->
-          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
-            <div>
-              <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
-                Blog Platform
-              </h3>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                A full-stack <strong>Express.js</strong> and
-                <strong>MongoDB</strong> blog app with authentication and post
-                management.
-              </p>
-            </div>
-            <a
-              href="https://github.com/subhamsharrma"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
-            >
-              View Project →
+          <!-- Project 2 -->
+          <div class="project-card">
+            <h3>Task Management App</h3>
+            <p>
+              Collaborative task manager with drag-and-drop interface, team
+              collaboration features, and deadline tracking.
+            </p>
+            <a href="#" class="project-link">
+              Read more
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
             </a>
           </div>
 
-          <!-- Project Card 3 -->
-          <div class="project-card bg-gradient-to-b from-gray-900/50 to-gray-800/40 border border-gray-800/60 rounded-xl shadow-md p-6 flex flex-col justify-between hover:-translate-y-1 hover:shadow-xl hover:border-indigo-500/40 transition-all duration-300">
-            <div>
-              <h3 class="text-lg font-semibold text-white mb-2 tracking-wide">
-                Weather App
-              </h3>
-              <p class="text-gray-400 text-sm leading-relaxed">
-                A responsive <strong>TypeScript</strong> app using the
-                OpenWeather API to display live weather forecasts.
-              </p>
-            </div>
-            <a
-              href="https://github.com/subhamsharrma"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center text-sm text-indigo-400 hover:text-indigo-300 font-medium transition mt-4"
-            >
-              View Project →
+          <!-- Project 3 -->
+          <div class="project-card">
+            <h3>Weather Dashboard</h3>
+            <p>
+              Real-time weather tracking application with interactive maps,
+              forecasts, and location-based alerts system.
+            </p>
+            <a href="#" class="project-link">
+              Read more
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <h3>Social Media Analytics</h3>
+            <p>
+              Comprehensive analytics dashboard for tracking engagement,
+              followers, and content performance across platforms.
+            </p>
+            <a href="#" class="project-link">
+              Read more
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 12H5m14 0-4 4m4-4-4-4"
+                />
+              </svg>
             </a>
           </div>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section class="mb-12 animate-fade-in-up" style="animation-delay: 0.4s">
-        <h2 class="text-2xl md:text-3xl font-semibold mb-5 text-white text-center">
-          Reach Out To Me
-        </h2>
+      <section class="contact-section">
+        <h2>Reach Out To Me</h2>
 
-        <p class="mb-6 text-gray-300 text-center max-w-2xl mx-auto">
+        <p class="contact-description">
           Feel free to reach out via <strong>Email</strong>,
           <strong>LinkedIn</strong>, or <strong>GitHub</strong> for any queries,
           collaboration opportunities, or internships.
         </p>
 
-        <div class="flex flex-wrap justify-center gap-3">
-          <a
-            href="mailto:subhamsharrma@gmail.com"
-            class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-          >
+        <div class="contact-buttons">
+          <a href="mailto:subhamsharrma@gmail.com" class="contact-btn primary">
             Email Me
           </a>
-          
+
           <a
             href="https://github.com/subhamsharrma"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+            class="contact-btn secondary"
           >
             GitHub
           </a>
@@ -244,7 +537,7 @@
             href="https://www.linkedin.com/in/subhamsharrma/"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+            class="contact-btn secondary"
           >
             LinkedIn
           </a>
@@ -253,24 +546,17 @@
             href="https://x.com/subham_sharrma"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-5 py-2.5 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+            class="contact-btn secondary"
           >
             X (Twitter)
           </a>
         </div>
       </section>
 
-      <hr class="border-t border-gray-700/70 w-11/12 mx-auto mb-8" />
-
       <!-- Footer -->
-      <footer class="space-y-3">
-        <p class="text-center text-gray-500 text-sm">
-          &copy; 2025 Subham Sharma. All rights reserved.
-        </p>
-        
-        <p class="text-center text-gray-500 text-sm">
-          <strong>Delhi Time:</strong> <span id="delhiTime" class="font-mono"></span>
-        </p>
+      <footer>
+        <p>&copy; 2025 Subham Sharma. All rights reserved.</p>
+        <p><strong>Delhi Time:</strong> <span id="delhiTime"></span></p>
       </footer>
     </main>
 
@@ -284,27 +570,12 @@
           second: "2-digit",
         };
         const formatter = new Intl.DateTimeFormat([], options);
-        document.getElementById("delhiTime").textContent = formatter.format(new Date());
+        document.getElementById("delhiTime").textContent = formatter.format(
+          new Date()
+        );
       }
       setInterval(updateDelhiTime, 1000);
       updateDelhiTime();
-
-      // Theme Toggle
-      const themeToggle = document.getElementById('themeToggle');
-      const body = document.body;
-      const toggleIcon = themeToggle.querySelector('svg');
-
-      themeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-theme');
-        
-        if (body.classList.contains('light-theme')) {
-          // Change to sun icon for light theme
-          toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>';
-        } else {
-          // Change to moon icon for dark theme
-          toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>';
-        }
-      });
     </script>
   </body>
 </html>
